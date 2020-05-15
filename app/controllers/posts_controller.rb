@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_posts, only: [:index, :show, :new, :edit]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
   end
 
   # GET /posts/1
@@ -66,6 +66,20 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_posts
+      @posts = Post.all
+      @consecutive_posts = 1
+
+      365.times do |index|
+        post = @posts.where(created_at: (Time.current - index.day).all_day).order(created_at: :desc).first
+        if post.blank?
+          break
+        else
+          @consecutive_posts += 1
+        end
+      end
     end
 
     # Only allow a list of trusted parameters through.
