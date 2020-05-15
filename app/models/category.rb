@@ -1,3 +1,3 @@
-class Post < ApplicationRecord
+class Category < ApplicationRecord
     has_many :tasks, dependent: :destroy
 end
