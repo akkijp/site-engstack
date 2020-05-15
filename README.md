@@ -1,24 +1,3 @@
-# README
+# engstack
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://user-images.githubusercontent.com/7535743/82014468-a3d44300-96b7-11ea-96c4-1ed3003a0838.png
