@@ -6,9 +6,9 @@
         <% end %>
         </h1>
         <div class="d-flex">
-            <a href="" class="p-btn p-btn--post">
+            <%= link_to new_post_path, class: 'p-btn p-btn--post' do %>
                 <i class="fas fa-edit"></i> 投稿する
-            </a>
+            <% end %>
             
             <div class="dropdown show p-dropdown">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -16,7 +16,9 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> 設定</a>
+                    <%= link_to settings_account_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-cogs"></i> 設定
+                    <% end %>
                     <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> ログアウト</a>
                 </div>
             </div>
