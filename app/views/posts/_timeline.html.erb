@@ -1,0 +1,11 @@
+<main class="p-main">
+
+    <div class="p-main__header">
+        <div>
+            <i class="fas fa-list"></i> タイムライン
+        </div>
+    </div>
+    <% posts.each do |post| %>
+        <%= render 'posts/summary', post: post %>
+    <% end %>
+</main>

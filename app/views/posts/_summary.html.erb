@@ -1,0 +1,14 @@
+<%= link_to post_path(post), class: 'p-summary d-flex' do %>
+    <span class="icon">🎉</span>
+    <div>
+        <span class="date"><%= post.created_at.strftime('%Y年%m月%d日') %></span>
+        <div class="badges">
+            <% post.categories.each do |category| %>
+                <span class="badge badge-secondary"><%= category.name %></span>
+            <% end %>
+        </div>
+        <div class="text">
+            <p><%= post.aword %></p>
+        </div>
+    </div>
+<% end %>
