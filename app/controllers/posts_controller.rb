@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @chart_date = @post.tasks.joins(:category).group("categories.name").sum(:time)
   end
 
   # GET /posts/new
