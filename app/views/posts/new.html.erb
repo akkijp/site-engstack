@@ -1,5 +1,54 @@
-<h1>New Post</h1>
+<div class="container mt-5">
+    <form>
+        <div class="form-group">
+            <h2>① - 今日勉強したこと</h2>
+            <div class="form-row">
+                <div class="col-6">
+                    <select class="form-control">
+                    <option>html</option>
+                    <option>css</option>
+                    <option>javascript</option>
+                    <option>ruby</option>
+                    <option>php</option>
+                    <option>python</option>
+                    <option>java</option>
+                    <option>perl</option>
+                    <option>swift</option>
+                    <option>golang</option>
+                    <option>c</option>
+                    <option>c++</option>
+                    <option>c#</option>
+                    <option>その他</option>
+                    </select>
+                </div>
+                <div class="col-1 d-flex justify-content-center align-items-center"><i class="fas fa-long-arrow-alt-right"></i></div>
+                <div class="col-5">
+                    <select class="form-control">
+                    <option>0.5時間</option>
+                    <option>1時間</option>
+                    <option>1.5時間</option>
+                    <option>2時間</option>
+                    <option>2.5時間</option>
+                    <option>3時間</option>
+                    <option>3.5時間</option>
+                    <option>4時間</option>
+                    <option>4.5時間</option>
+                    <option>5時間</option>
+                    <option>5.5時間</option>
+                    <option>6時間</option>
+                    <option>6.5時間</option>
+                    <option>7時間</option>
+                    <option>7.5時間</option>
+                    <option>8時間</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <h2>② - 今日の一言</h2>
+        <div class="form-group">
+            <textarea class="form-control" rows="5" placeholder="今日は〇〇と××の勉強をしたけれど、□□の部分が難しくわからなかった。要復習"></textarea>
+        </div>
 
-<%= render 'form', post: @post %>
-
-<%= link_to 'Back', posts_path %>
+        <button type="submit" class="btn btn-primary">送信</button>
+    </form>
+</div>
