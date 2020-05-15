@@ -1,6 +1,10 @@
 <header class="container-fluid p-header">
     <div class="container p-header__inner">
-        <h1 class="m-0"><img class="logo" src="/images/logo.png" alt=""></h1>
+        <h1 class="m-0">
+        <%= link_to root_path do %>
+            <img class="logo" src="/images/logo.png" alt="">
+        <% end %>
+        </h1>
         <div class="d-flex">
             <a href="" class="p-btn p-btn--post">
                 <i class="fas fa-edit"></i> 投稿する
