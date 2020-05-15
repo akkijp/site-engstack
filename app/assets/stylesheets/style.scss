@@ -1,0 +1,241 @@
+
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+html body {
+    background-color: #f6f6f4;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.p-header {
+    background-color: #55c500;
+    color: #fff;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .p-header__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: block;
+        width: 120px;
+    }
+}
+
+.p-btn.p-btn--post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    background-color: #3f9200;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0 16px 0 12px;
+    margin-right: 16px;
+
+    i {
+        margin-right: 4px;
+    }
+}
+
+.p-dropdown{
+    .profile-icon {
+        display: flex;
+        overflow: hidden;
+        border-radius: 0.2em;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        background: #fff;
+        margin-right: 6px;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        color: #333;
+
+        &:hover {
+            background: transparent;
+        }
+    }
+}
+
+.p-userinfo {
+    background-color: #fff;
+    margin-bottom: 16px;
+
+    .p-userinfo__header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e8e8e8;
+        padding: 16px;
+
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+
+        .p-userinfo__screenname {
+            color: #999;
+            font-size: 0.9em;
+            font-weight: normal;
+        }
+    }
+    .p-userinfo__status {
+        display: flex;
+    }
+    .p-userinfo__statusItem {
+        flex: 1;
+        text-align: center;
+        border-left: 1px solid #e8e8e8;
+        padding: 8px 0;
+
+        &:first-child {
+            border-left: none;
+        }
+    }
+}
+
+.p-main {
+    margin: 0;
+    padding: 0;
+    // padding-top: 2.4rem;
+    // pointer-events: none;
+    width: 100%;
+    background-color: #fff;
+    // box-shadow: 0 1px 4px 0 rgba(152,152,152,0.5);
+    border-radius: 4px;
+    // padding: 1.6rem;
+    // opacity: 0;
+    // transform: translateY(0);
+    // transition: opacity 0.3s 0.1s, transform 0.3s 0.1s ease-out;
+    word-wrap: break-word;
+
+    .p-main__header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        line-height: 1;
+        justify-content: space-between;
+        border-bottom: 1px solid #e8e8e8;
+        padding: 16px;
+    }
+}
+
+.p-summary {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 16px;
+
+    .icon {
+        font-size: 40px;
+        margin-right: 20px;
+    }
+
+    .badges {
+        margin-bottom: 10px;
+    }
+
+    .text > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.p-ranking {
+    background-color: #fff;
+    border: 1px solid transparent;
+    margin-bottom: 16px;
+    padding: 16px;
+
+    .p-ranking__header {
+        margin-bottom: 16px;
+    }
+}
+
+
+.p-rankbox {
+    display: flex;
+    justify-content: space-between;
+
+    .p-rankbox__text {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        .listmarker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 32px;
+            font-size: 1rem;
+            color: #999;
+            margin-right: 8px;
+        }
+
+        img {
+            display: flex;
+            overflow: hidden;
+            border-radius: 0.2em;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            margin-right: 8px;
+        }
+    }
+
+    .p-rankbox__time {
+        font-size: 10px;
+        color: #999;
+        text-align: center;
+
+        .p-rankbox__timeCount {
+            color: #333;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+
+    &:not(:last-child) {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+}
+
+
+.p-footer {
+    background-color: #3e3e3e;
+    margin-top: 64px;
+    padding: 32px 16px;
+    color: #fff;
+    
+    .p-footer__logo {
+        font-size: 13px;
+        img {
+            display: block;
+            width: 160px;
+        }
+    }
+
+    .p-footer__copy {
+        margin: 0 auto;
+        color: #b3b3b3;
+        font-size: 12px;
+    }
+}
