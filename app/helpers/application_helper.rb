@@ -15,4 +15,17 @@ module ApplicationHelper
         # This renders a simple link, but passes information into `data` attributes.
         link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
     end
+
+    # devise Helper
+    def resource_name
+        :user
+    end
+
+    def resource
+        @resource ||= User.new
+    end
+
+    def devise_mapping
+        @devise_mapping ||= Devise.mappings[:user]
+    end
 end
