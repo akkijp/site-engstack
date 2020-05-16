@@ -18,3 +18,5 @@ require("channels")
 
 require("chartkick")
 require("chart.js")
+require("./nestfields/add.js")
+require("./nestfields/remove.js")
