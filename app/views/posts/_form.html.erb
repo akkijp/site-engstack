@@ -1,12 +1,14 @@
 <div class="container mt-5">
     <%= form_with(model: post) do |f| %>
-        <div class="form-group">
-            <h2>① - 今日勉強したこと</h2>
-            <%= f.fields_for :tasks do |sform|%>
-              <%= render "task_fields", f: sform %>
-            <% end %>
-        </div>
-        <%= link_to_add_fields "Add Tasks", f, :tasks %>
+
+        <h2>① - 今日勉強したこと</h2>
+        <%= f.fields_for :tasks do |sform|%>
+          <%= render "task_fields", f: sform %>
+        <% end %>
+        <%= link_to_add_fields "追加", f, :tasks %>
+
+        <br>
+
         <h2>② - 今日の一言</h2>
         <div class="form-group">
             <%= f.text_area :aword, class: "form-control", rows: "5", placeholder: '今日は〇〇と××の勉強をしたけれど、□□の部分が難しくわからなかった。要復習' %>
