@@ -36,7 +36,7 @@ gem 'faraday_middleware'
 
 gem 'activerecord-import'
 gem "chartkick"
-gem 'devise'
+gem 'sorcery'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_posts, only: [:index, :show, :new, :edit]
 
@@ -73,7 +73,7 @@ class PostsController < ApplicationController
     def set_posts
       @posts = Post.all
       @posts_ranking = Task.joins(:category).group('categories.name').sum(:time).sort_by { |_, v| v }.reverse
-      @consecutive_posts = 1
+      @consecutive_posts = 0
 
       365.times do |index|
         post = @posts.where(created_at: (Time.current - index.day).all_day).order(created_at: :desc).first
