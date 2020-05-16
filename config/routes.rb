@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'settings/account'
   get 'settings/password'
   post 'settings/password'
+
+  resources :users, only: [:new, :create]
   # resource :settings, only: [:edit]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
