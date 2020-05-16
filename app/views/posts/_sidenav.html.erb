@@ -21,41 +21,54 @@
             ランキング
         </div>
 
+        <% if @posts_ranking[0].present? %>
+            <div class="p-rankbox">
+                <div class="p-rankbox__text">
+                    <span class="listmarker"><i class="fas fa-trophy" style="color: #ffc400;"></i></span> <img src="/images/serviceicon/html5.png" alt=""> <%= @posts_ranking[0][0] %>
+                </div>
+                <div class="p-rankbox__time">
+                    <div class="p-rankbox__timeCount"><%= (@posts_ranking[0][1] / 60.0).floor(1) %></div>
+                    時間
+                </div>
+            </div>
+        <% end %>
+
+        <% if @posts_ranking[1].present? %>
         <div class="p-rankbox">
             <div class="p-rankbox__text">
-                <span class="listmarker"><i class="fas fa-trophy" style="color: #ffc400;"></i></span> <img src="/images/serviceicon/html5.png" alt=""> HTML5
+                <span class="listmarker"><i class="fas fa-trophy" style="color: #c9c9c9;"></i></span> <img src="/images/serviceicon/css3.png" alt=""> <%= @posts_ranking[1][0] %>
             </div>
             <div class="p-rankbox__time">
-                <div class="p-rankbox__timeCount">120</div>
+                <div class="p-rankbox__timeCount"><%= (@posts_ranking[1][1] / 60.0).floor(1) %></div>
                 時間
             </div>
         </div>
+        <% end %>
+
+        <% if @posts_ranking[2].present? %>
         <div class="p-rankbox">
             <div class="p-rankbox__text">
-                <span class="listmarker"><i class="fas fa-trophy" style="color: #c9c9c9;"></i></span> <img src="/images/serviceicon/css3.png" alt=""> CSS3
+                <span class="listmarker"><i class="fas fa-trophy" style="color: #ac6d4d;"></i></span> <img src="/images/serviceicon/javascript.png" alt=""> <%= @posts_ranking[2][0] %>
             </div>
             <div class="p-rankbox__time">
-                <div class="p-rankbox__timeCount">90</div>
+                <div class="p-rankbox__timeCount"><%= (@posts_ranking[2][1] / 60.0).floor(1) %></div>
                 時間
             </div>
         </div>
-        <div class="p-rankbox">
-            <div class="p-rankbox__text">
-                <span class="listmarker"><i class="fas fa-trophy" style="color: #ac6d4d;"></i></span> <img src="/images/serviceicon/javascript.png" alt=""> JS
+        <% end %>
+
+        <% (4...7).each do |index| %>
+            <% if @posts_ranking[index].present? %>
+            <div class="p-rankbox">
+                <div class="p-rankbox__text">
+                    <span class="listmarker"><%= index %></span> <img src="/images/serviceicon/docker.png" alt="">  <%= @posts_ranking[index][0] %>
+                </div>
+                <div class="p-rankbox__time">
+                    <div class="p-rankbox__timeCount"><%= (@posts_ranking[index][1] / 60.0).floor(1) %></div>
+                    時間
+                </div>
             </div>
-            <div class="p-rankbox__time">
-                <div class="p-rankbox__timeCount">80</div>
-                時間
-            </div>
-        </div>
-        <div class="p-rankbox">
-            <div class="p-rankbox__text">
-                <span class="listmarker">4</span> <img src="/images/serviceicon/docker.png" alt=""> Docker
-            </div>
-            <div class="p-rankbox__time">
-                <div class="p-rankbox__timeCount">30</div>
-                時間
-            </div>
-        </div>
+            <% end %>
+        <% end %>
     </div>
 </aside>

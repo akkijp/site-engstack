@@ -70,6 +70,7 @@ class PostsController < ApplicationController
 
     def set_posts
       @posts = Post.all
+      @posts_ranking = Task.joins(:category).group('categories.name').sum(:time).sort_by { |_, v| v }.reverse
       @consecutive_posts = 1
 
       365.times do |index|
