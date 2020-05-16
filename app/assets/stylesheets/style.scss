@@ -30,25 +30,44 @@ html body {
     }
 }
 
-.p-btn.p-btn--post {
+.p-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 32px;
-    background-color: #3f9200;
-    color: #fff;
     border-radius: 4px;
     font-size: 0.8rem;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    padding: 0 16px 0 12px;
+    padding: 0 16px;
     margin-right: 16px;
 
     i {
         margin-right: 4px;
     }
+
+    &:hover {
+        background: transparent;
+        text-decoration: none;
+    }
+    
+    &.p-btn--post {
+        background-color: #3f9200;
+        color: #fff;
+    }
+    
+    &.p-btn--signup {
+        background-color: #3f9200;
+        color: #fff;
+    }
+
+    &.p-btn--login {
+        border: 2px solid #3f9200;
+        color: #fff;
+    }
 }
+
 
 .p-dropdown{
     .profile-icon {
