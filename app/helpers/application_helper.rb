@@ -15,9 +15,4 @@ module ApplicationHelper
         # This renders a simple link, but passes information into `data` attributes.
         link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
     end
-
-    # tmp
-    def user_signed_in?
-        true
-    end
 end

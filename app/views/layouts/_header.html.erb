@@ -6,7 +6,7 @@
         <% end %>
         </h1>
         <div class="d-flex">
-            <% if user_signed_in? %>
+            <% if logged_in? %>
                 <%= link_to new_post_path, class: 'p-btn p-btn--post' do %>
                     <i class="fas fa-edit"></i> 投稿する
                 <% end %>
@@ -17,19 +17,19 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                        <%= link_to root_path, class: 'dropdown-item' do %>
+                        <%= link_to settings_account_path, class: 'dropdown-item' do %>
                             <i class="fas fa-cogs"></i> 設定
                         <% end %>
-                        <%= link_to root_path, method: :delete, class: 'dropdown-item' do %>
+                        <%= link_to logout_path, method: :delete, class: 'dropdown-item' do %>
                             <i class="fas fa-sign-out-alt"></i> ログアウト
                         <% end %>
                     </div>
                 </div>
             <% else %>
-                <%= link_to root_path, class: 'p-btn p-btn--signup' do %>
+                <%= link_to signup_path, class: 'p-btn p-btn--signup' do %>
                     登録
                 <% end %>
-                <%= link_to root_path, class: 'p-btn p-btn--login' do %>
+                <%= link_to login_path, class: 'p-btn p-btn--login' do %>
                     ログイン
                 <% end %>
             <% end %>
