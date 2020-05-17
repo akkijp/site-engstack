@@ -17,8 +17,8 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                        <%= link_to settings_account_path, class: 'dropdown-item' do %>
-                            <i class="fas fa-cogs"></i> 設定
+                        <%= link_to edit_users_password_path, class: 'dropdown-item' do %>
+                            <i class="fas fa-cogs"></i> パスワード変更
                         <% end %>
                         <%= link_to logout_path, method: :delete, class: 'dropdown-item' do %>
                             <i class="fas fa-sign-out-alt"></i> ログアウト
