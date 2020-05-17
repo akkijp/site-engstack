@@ -17,6 +17,24 @@ end
 response = connection.get '/macros/s/AKfycbxsUPPD9kLKH7cLra9-4N8q_smqVufg3uaCpR9NaekfT-fGJQCH/exec'
 json_data = JSON.parse(response.body)
 
+puts json_data
+
+# records = []
+json_data['tables']['users'].each do |row|
+    User.create(
+        id: row['id'],
+        email: row['email'],
+        password: row['password'],
+        password_confirmation: row['password']
+    )
+    # records << User.new(
+    #     id: row['id'],
+    #     email: row['email'],
+    #     password: row['password']
+    # )
+end
+# User.import records
+
 records = []
 json_data['tables']['categories'].each do |row|
     records << Category.new(
@@ -30,6 +48,7 @@ records = []
 json_data['tables']['posts'].each do |row|
     records << Post.new(
         id: row['id'],
+        user_id: row['user_id'],
         aword: row['aword']
     )
 end
@@ -37,11 +56,6 @@ Post.import records
 
 records = []
 json_data['tables']['tasks'].each do |row|
-    # puts row
-    # Task.create(id: row['id'],
-    #     time: row['time'],
-    #     post_id: row['post'],
-    #     category_id: row['category'])
     records << Task.new(
         id: row['id'],
         time: row['time'],
