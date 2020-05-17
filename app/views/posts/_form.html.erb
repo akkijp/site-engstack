@@ -1,5 +1,16 @@
 <div class="container mt-5">
-    <%= form_with(model: post) do |f| %>
+    <%= form_with model: post, local: true do |f| %>
+        <% if post.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+            <ul>
+              <% post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
         <h2>① - 今日勉強したこと</h2>
         <%= f.fields_for :tasks do |sform|%>
@@ -17,24 +28,3 @@
         <%= f.submit "送信", class: "btn btn-primary" %>
     <% end %>
 </div>
-
-
-<!--
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
--->
