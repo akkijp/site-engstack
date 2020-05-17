@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   post   '/login',   to: "users/sessions#create"
   delete '/logout',  to: "users/sessions#destroy"
 
+  namespace :users do
+    resource :password, only: [:edit, :update]
+  end
+
   # resources 'users/registrations', only: [:new, :create], as: :users
   # resource :settings, only: [:edit]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

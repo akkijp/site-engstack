@@ -1,0 +1,13 @@
+<%= form_with url: users_password_path, method: :patch, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, { class: "form-control", placeholder: 'Password' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, { class: "form-control", placeholder: 'Password' } %>
+  </div>
+
+  <%= f.submit '登録', class: 'btn btn-success' %>
+<% end %>
